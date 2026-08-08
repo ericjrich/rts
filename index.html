@@ -3,164 +3,428 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="Rich Technical Solutions — technical and operations consulting, troubleshooting, and project coordination." />
-<meta name="theme-color" content="#f6f7f9" />
+<meta name="description" content="Rich Technical Solutions provides technical and operations consulting, troubleshooting, systems thinking, and project coordination for manufacturers, businesses, facilities, and complex technical problems." />
+<meta name="theme-color" content="#0d1720" />
+<meta name="robots" content="index,follow" />
+<link rel="canonical" href="https://richtechnicalsolutions.com/" />
 <title>Rich Technical Solutions | Technical clarity for complex problems</title>
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Rich Technical Solutions" />
+<meta property="og:description" content="Technical clarity for complex problems. Investigation, troubleshooting, project coordination, and integrated solutions." />
+<meta property="og:url" content="https://richtechnicalsolutions.com/" />
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@1,6..72,500&display=swap" rel="stylesheet">
+
 <style>
   :root{
-    --bg:#f6f7f9;
-    --paper:#ffffff;
-    --ink:#171b21;
-    --muted:#5b6470;
-    --line:#dde1e7;
-    --line-strong:#c3c9d1;
-    --blue:#2557a7;
-    --blue-soft:#e7eefb;
-    --max:900px;
+    --ink:#0d1720;
+    --ink-2:#14212c;
+    --ink-3:#1c2b37;
+    --paper:#f3f0e9;
+    --paper-2:#ebe7de;
+    --white:#fffdfa;
+    --text:#18242e;
+    --muted:#66717a;
+    --muted-dark:#aab5be;
+    --line:#d6d0c5;
+    --line-dark:rgba(255,255,255,.14);
+    --accent:#4f7cff;
+    --accent-soft:#dfe7ff;
+    --max:1220px;
+    --radius:18px;
+    --shadow:0 24px 70px rgba(10,20,28,.12);
   }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
   body{
     margin:0;
-    background:
-      linear-gradient(var(--line) 1px, transparent 1px),
-      linear-gradient(90deg, var(--line) 1px, transparent 1px),
-      var(--bg);
-    background-size:36px 36px;
-    background-position:-1px -1px;
-    color:var(--ink);
-    font-family:Inter,ui-sans-serif,system-ui,sans-serif;
-    line-height:1.6;
+    color:var(--text);
+    background:var(--paper);
+    font-family:"Manrope",ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
   }
-  a{color:inherit;}
-  .mono{font-family:"JetBrains Mono",ui-monospace,monospace;}
-  ::selection{background:var(--blue-soft);}
-  .shell{width:min(calc(100% - 2.4rem), var(--max)); margin-inline:auto;}
-  .skip{position:absolute;left:-9999px;top:1rem;background:var(--ink);color:#fff;padding:.8rem 1rem;border-radius:6px;z-index:100;}
-  .skip:focus{left:1rem;}
 
-  header{
-    position:sticky; top:0; z-index:40;
-    background:rgba(246,247,249,.9);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line-strong);
+  body::selection{background:var(--accent-soft);color:var(--ink)}
+  a{color:inherit}
+  button,input,select,textarea{font:inherit}
+  h1,h2,h3,p{margin:0}
+  img,svg{display:block;max-width:100%}
+  .shell{width:min(calc(100% - 40px),var(--max));margin-inline:auto}
+  .mono{font-family:"DM Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
+
+  .skip{
+    position:absolute;left:-9999px;top:12px;z-index:9999;
+    background:#fff;color:#000;padding:.8rem 1rem;border-radius:10px;
   }
-  .nav{min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:1rem;}
-  .brand{display:inline-flex; align-items:center; gap:.65rem; text-decoration:none; font-weight:700; letter-spacing:-.01em;}
+  .skip:focus{left:12px}
+
+  /* NAV */
+  .site-header{
+    position:fixed;z-index:100;top:0;left:0;right:0;
+    color:#fff;
+    background:linear-gradient(to bottom,rgba(8,15,21,.86),rgba(8,15,21,.38),transparent);
+    transition:background .2s ease,border-color .2s ease,backdrop-filter .2s ease;
+    border-bottom:1px solid transparent;
+  }
+  .site-header.scrolled{
+    background:rgba(13,23,32,.92);
+    backdrop-filter:blur(16px);
+    border-color:var(--line-dark);
+  }
+  .nav{
+    min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;
+  }
+  .brand{
+    display:flex;align-items:center;gap:.85rem;text-decoration:none;color:#fff;
+  }
   .brand-mark{
-    width:30px; height:30px; border:1.5px solid var(--ink); border-radius:4px;
-    display:grid; place-items:center; font-family:"JetBrains Mono",monospace;
-    font-weight:700; font-size:.62rem; letter-spacing:.02em;
+    width:42px;height:42px;border:1px solid rgba(255,255,255,.35);
+    display:grid;place-items:center;position:relative;
   }
-  .nav-links{display:flex; align-items:center; gap:1.5rem;}
-  .nav-links a{color:var(--muted); text-decoration:none; font-size:.9rem; font-weight:600;}
-  .nav-links a:hover{color:var(--ink);}
-
-  .btn{
-    display:inline-flex; align-items:center; justify-content:center;
-    min-height:44px; padding:.75rem 1.2rem; border-radius:6px;
-    text-decoration:none; font-weight:700; font-size:.92rem;
-    border:1.5px solid var(--ink); cursor:pointer; transition:.15s ease;
+  .brand-mark::before,.brand-mark::after{
+    content:"";position:absolute;background:rgba(255,255,255,.18);
   }
-  .btn-primary{background:var(--ink); color:#fff;}
-  .btn-primary:hover{background:var(--blue); border-color:var(--blue);}
-  .btn-ghost{border-color:var(--line-strong); color:var(--ink); background:var(--paper);}
-  .btn-ghost:hover{border-color:var(--ink);}
-
-  section{padding:clamp(3.2rem,7vw,5.5rem) 0;}
-  .kicker{
-    color:var(--blue); font-family:"JetBrains Mono",monospace;
-    text-transform:uppercase; letter-spacing:.08em; font-weight:700; font-size:.72rem;
-    margin-bottom:.9rem; display:flex; align-items:center; gap:.5rem;
+  .brand-mark::before{width:1px;height:100%}
+  .brand-mark::after{width:100%;height:1px}
+  .brand-mark span{
+    position:relative;z-index:1;background:var(--ink);padding:.15rem .25rem;
+    font:500 .63rem/1 "DM Mono",monospace;letter-spacing:.08em;
   }
-  .kicker::before{content:"§"; color:var(--muted);}
-  h1,h2,h3,p{margin:0;}
+  .brand-copy strong{
+    display:block;font-size:.95rem;letter-spacing:-.02em;
+  }
+  .brand-copy small{
+    display:block;margin-top:.08rem;color:#aeb8c0;font:400 .61rem/1.4 "DM Mono",monospace;
+    letter-spacing:.1em;text-transform:uppercase;
+  }
 
-  .hero{padding-top:clamp(3.5rem,8vw,5.5rem);}
+  .nav-links{display:flex;align-items:center;gap:1.6rem}
+  .nav-links>a:not(.nav-cta){
+    color:#bdc5cb;text-decoration:none;font-size:.83rem;font-weight:600;
+    transition:color .18s ease;
+  }
+  .nav-links>a:not(.nav-cta):hover{color:#fff}
+  .nav-cta{
+    display:inline-flex;align-items:center;gap:.7rem;
+    background:#fff;color:var(--ink);text-decoration:none;
+    padding:.76rem 1rem;border-radius:999px;font-size:.82rem;font-weight:800;
+  }
+  .nav-cta::after{content:"↗";font-size:.95rem}
+
+  /* HERO */
+  .hero{
+    min-height:760px;
+    color:#fff;background:
+      radial-gradient(circle at 78% 20%,rgba(79,124,255,.22),transparent 26rem),
+      linear-gradient(145deg,#0b141c 0%,#0f1c27 58%,#0a1219 100%);
+    position:relative;overflow:hidden;
+    padding:150px 0 70px;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;pointer-events:none;opacity:.32;
+    background-image:
+      linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
+    background-size:72px 72px;
+    mask-image:linear-gradient(to bottom,black,transparent 80%);
+  }
+  .hero::after{
+    content:"";position:absolute;width:44vw;height:44vw;max-width:680px;max-height:680px;
+    min-width:420px;min-height:420px;right:-10vw;bottom:-20vw;
+    border:1px solid rgba(255,255,255,.08);border-radius:50%;
+    box-shadow:0 0 0 70px rgba(255,255,255,.018),0 0 0 140px rgba(255,255,255,.012);
+  }
+  .hero-grid{
+    position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.22fr) minmax(300px,.78fr);
+    gap:clamp(3rem,8vw,7rem);align-items:end;
+  }
+  .eyebrow{
+    display:flex;align-items:center;gap:.8rem;
+    color:#aeb9c1;font:500 .7rem/1.4 "DM Mono",monospace;
+    letter-spacing:.12em;text-transform:uppercase;
+  }
+  .eyebrow::before{content:"";width:34px;height:1px;background:var(--accent)}
   .hero h1{
-    max-width:740px;
-    font-size:clamp(2.4rem,5.2vw,4rem);
-    line-height:1.08; letter-spacing:-.025em; font-weight:800;
+    margin-top:1.35rem;max-width:800px;
+    font-size:clamp(3.5rem,7.4vw,7rem);line-height:.91;letter-spacing:-.065em;font-weight:700;
   }
-  .hero h1 span{color:var(--blue);}
-  .hero p.lede{max-width:580px; margin-top:1.2rem; color:var(--muted); font-size:1.08rem;}
-  .hero-actions{display:flex; gap:.85rem; flex-wrap:wrap; margin-top:2rem;}
+  .hero h1 em{
+    font-family:"Newsreader",Georgia,serif;font-weight:500;color:#b9c8ff;
+  }
+  .hero-lede{
+    max-width:690px;margin-top:1.9rem;color:#b8c2ca;font-size:clamp(1.05rem,1.65vw,1.3rem);
+    line-height:1.65;font-weight:400;
+  }
+  .hero-actions{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;margin-top:2.2rem}
+  .btn{
+    min-height:52px;padding:.9rem 1.2rem;border-radius:999px;text-decoration:none;
+    display:inline-flex;align-items:center;justify-content:center;gap:.65rem;
+    font-size:.86rem;font-weight:800;border:1px solid transparent;cursor:pointer;
+    transition:transform .18s ease,background .18s ease,border-color .18s ease;
+  }
+  .btn:hover{transform:translateY(-1px)}
+  .btn-light{background:#fff;color:var(--ink)}
+  .btn-light::after{content:"↗"}
+  .btn-outline{border-color:rgba(255,255,255,.23);color:#fff;background:rgba(255,255,255,.035)}
+  .btn-outline:hover{border-color:rgba(255,255,255,.5)}
 
-  .thread{
-    margin-top:3rem; padding-top:1.4rem; border-top:1px dashed var(--line-strong);
-    display:flex; flex-wrap:wrap; gap:.5rem 2rem;
-    color:var(--muted); font-size:.85rem; font-weight:600; font-family:"JetBrains Mono",monospace;
+  .hero-panel{
+    border-left:1px solid rgba(255,255,255,.14);padding-left:2rem;padding-bottom:.25rem;
+  }
+  .hero-panel-label{
+    color:#8796a1;font:500 .66rem/1.4 "DM Mono",monospace;letter-spacing:.12em;text-transform:uppercase;
+    margin-bottom:1.3rem;
+  }
+  .hero-panel h2{
+    font-size:1.15rem;line-height:1.5;letter-spacing:-.02em;font-weight:600;color:#edf1f4;
+  }
+  .hero-panel-list{margin-top:1.7rem;border-top:1px solid rgba(255,255,255,.12)}
+  .hero-panel-row{
+    padding:1rem 0;border-bottom:1px solid rgba(255,255,255,.12);
+    display:flex;justify-content:space-between;gap:1rem;
+    color:#adb8c0;font-size:.77rem;
+  }
+  .hero-panel-row span:last-child{
+    color:#e7edf1;font-family:"DM Mono",monospace;font-size:.67rem;text-align:right;
+  }
+  .hero-bottom{
+    position:relative;z-index:2;margin-top:5.8rem;padding-top:1.25rem;
+    border-top:1px solid rgba(255,255,255,.13);
+    display:flex;justify-content:space-between;gap:1.5rem;align-items:center;flex-wrap:wrap;
+  }
+  .sectors{display:flex;gap:.7rem 1.8rem;flex-wrap:wrap;color:#a9b3bb;font:500 .66rem/1.4 "DM Mono",monospace;letter-spacing:.1em}
+  .hero-note{color:#70808c;font-size:.78rem}
+
+  /* SECTIONS */
+  section.light{padding:clamp(5.5rem,9vw,8.5rem) 0}
+  .section-grid{
+    display:grid;grid-template-columns:330px 1fr;gap:clamp(3rem,8vw,8rem);
+  }
+  .section-label{
+    color:#6b7580;font:500 .68rem/1.5 "DM Mono",monospace;text-transform:uppercase;letter-spacing:.12em;
+    position:sticky;top:120px;align-self:start;
+  }
+  .section-label span{color:var(--accent);margin-right:.7rem}
+  .display{
+    font-size:clamp(2.7rem,5.6vw,5.4rem);line-height:.98;letter-spacing:-.055em;font-weight:650;color:var(--ink);
+  }
+  .display em{font-family:"Newsreader",Georgia,serif;font-weight:500;color:#3f5363}
+  .lead{
+    margin-top:1.6rem;max-width:800px;color:#5e6972;font-size:clamp(1.04rem,1.5vw,1.24rem);line-height:1.72;
   }
 
-  h2.section-title{font-size:clamp(1.7rem,3.2vw,2.4rem); letter-spacing:-.02em; font-weight:800; max-width:600px;}
-  p.section-lede{color:var(--muted); font-size:1rem; max-width:540px; margin-top:.8rem;}
-
-  .cap-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line-strong); margin-top:2.5rem; border:1px solid var(--line-strong);}
-  .cap-card{background:var(--paper); padding:1.5rem; position:relative;}
-  .cap-card .idx{font-family:"JetBrains Mono",monospace; font-size:.7rem; color:var(--blue); font-weight:700;}
-  .cap-card h3{font-size:1.02rem; font-weight:700; margin:.5rem 0 .45rem;}
-  .cap-card p{color:var(--muted); font-size:.92rem;}
-
-  .process{border-top:1px solid var(--line-strong);}
-  .steps{margin-top:2.5rem; position:relative; padding-left:2.4rem;}
-  .steps::before{
-    content:""; position:absolute; left:11px; top:8px; bottom:8px;
-    border-left:1.5px dashed var(--line-strong);
+  /* PROBLEM */
+  .problem{
+    background:var(--white);border-bottom:1px solid var(--line);
   }
-  .step{position:relative; padding-bottom:1.9rem;}
-  .step:last-child{padding-bottom:0;}
-  .step .n{
-    position:absolute; left:-2.4rem; top:0; width:24px; height:24px;
-    border:1.5px solid var(--blue); border-radius:50%; background:var(--paper);
-    display:grid; place-items:center; font-family:"JetBrains Mono",monospace;
-    font-size:.65rem; font-weight:700; color:var(--blue);
+  .problem-callout{
+    margin-top:3rem;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);
   }
-  .step h3{font-size:1.02rem; font-weight:700;}
-  .step p{color:var(--muted); font-size:.93rem; margin-top:.25rem;}
+  .problem-cell{padding:1.6rem 1.6rem 0 0;min-height:150px;border-right:1px solid var(--line)}
+  .problem-cell+ .problem-cell{padding-left:1.6rem}
+  .problem-cell:last-child{border-right:0}
+  .problem-cell .num{color:var(--accent);font:500 .66rem/1 "DM Mono",monospace}
+  .problem-cell h3{margin-top:.75rem;font-size:1rem;line-height:1.45}
+  .problem-cell p{margin-top:.55rem;color:#69737b;font-size:.88rem;line-height:1.65}
 
-  .contact{border-top:1px solid var(--line-strong);}
-  .contact-grid{display:grid; grid-template-columns:.85fr 1.15fr; gap:3rem; margin-top:2.5rem;}
-  .contact-copy p{color:var(--muted); font-size:.98rem;}
-  .contact-email{display:inline-block; margin-top:1.3rem; color:var(--blue); font-weight:700; text-decoration:none; font-family:"JetBrains Mono",monospace; font-size:.92rem;}
+  /* CAPABILITIES */
+  .capabilities{background:var(--paper)}
+  .cap-list{margin-top:4rem;border-top:1px solid #bdb7ae}
+  .cap-row{
+    display:grid;grid-template-columns:80px minmax(220px,.8fr) 1.25fr;
+    gap:2rem;padding:2.1rem 0;border-bottom:1px solid #c9c3b9;align-items:start;
+    transition:padding .2s ease,background .2s ease;
+  }
+  .cap-row:hover{padding-left:.6rem;padding-right:.6rem;background:rgba(255,255,255,.38)}
+  .cap-num{color:#7f8991;font:500 .66rem/1.5 "DM Mono",monospace}
+  .cap-row h3{font-size:1.18rem;letter-spacing:-.025em}
+  .cap-row p{color:#66717a;font-size:.94rem;line-height:1.7;max-width:680px}
 
-  form{display:grid; gap:1rem; background:var(--paper); border:1px solid var(--line-strong); border-radius:8px; padding:1.5rem;}
-  .row{display:grid; grid-template-columns:1fr 1fr; gap:1rem;}
-  label{display:block; font-size:.78rem; font-weight:700; color:var(--muted); margin-bottom:.4rem; font-family:"JetBrains Mono",monospace; text-transform:uppercase; letter-spacing:.04em;}
+  /* EXPERIENCE */
+  .experience{
+    background:var(--ink);color:#fff;padding:clamp(5.5rem,9vw,8.5rem) 0;position:relative;overflow:hidden;
+  }
+  .experience::before{
+    content:"";position:absolute;left:-120px;top:-120px;width:430px;height:430px;border:1px solid rgba(255,255,255,.06);border-radius:50%;
+    box-shadow:0 0 0 70px rgba(255,255,255,.012);
+  }
+  .experience .section-label{color:#86949e}
+  .experience .display{color:#fff}
+  .experience .display em{color:#a9b9f4}
+  .experience .lead{color:#aeb9c1}
+  .experience-note{
+    margin-top:1.25rem;color:#75838d;font-size:.78rem;max-width:720px;
+  }
+  .case-grid{margin-top:3.6rem;display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.12)}
+  .case{
+    background:var(--ink-2);padding:clamp(1.7rem,3vw,2.6rem);min-height:300px;
+    display:flex;flex-direction:column;justify-content:space-between;gap:2.2rem;
+    transition:background .2s ease;
+  }
+  .case:hover{background:var(--ink-3)}
+  .case-tag{color:#7f8e99;font:500 .65rem/1.5 "DM Mono",monospace;letter-spacing:.09em;text-transform:uppercase}
+  .case h3{font-size:clamp(1.35rem,2vw,1.9rem);letter-spacing:-.035em;line-height:1.15;max-width:430px}
+  .case p{margin-top:.8rem;color:#a8b3bb;font-size:.9rem;line-height:1.72;max-width:500px}
+  .case-foot{padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.11);color:#7d8a94;font:400 .67rem/1.6 "DM Mono",monospace}
+
+  /* METHOD */
+  .method{background:var(--white);border-bottom:1px solid var(--line)}
+  .method-line{margin-top:4rem;display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .method-step{padding:1.7rem 1.2rem 2rem;border-right:1px solid var(--line);position:relative}
+  .method-step:last-child{border-right:0}
+  .method-step .n{color:var(--accent);font:500 .62rem/1 "DM Mono",monospace}
+  .method-step h3{margin-top:2.1rem;font-size:.95rem;letter-spacing:-.02em}
+  .method-step p{margin-top:.55rem;color:#6c757d;font-size:.8rem;line-height:1.65}
+  .method-step::after{
+    content:"";position:absolute;top:-4px;left:0;width:7px;height:7px;border-radius:50%;background:var(--accent);
+  }
+
+  /* PRINCIPAL */
+  .principal{background:var(--paper)}
+  .principal-card{
+    margin-top:3.5rem;background:#e8e3d9;border:1px solid #d1cabf;border-radius:var(--radius);
+    padding:clamp(2rem,5vw,4.2rem);display:grid;grid-template-columns:.75fr 1.25fr;gap:clamp(2.5rem,7vw,6rem);
+  }
+  .principal-stamp{
+    width:150px;aspect-ratio:1;border:1px solid #aaa399;border-radius:50%;
+    display:grid;place-items:center;position:relative;color:#48545d;
+  }
+  .principal-stamp::before,.principal-stamp::after{content:"";position:absolute;border:1px solid #b9b2a8;border-radius:50%}
+  .principal-stamp::before{inset:10px}
+  .principal-stamp::after{inset:24px}
+  .principal-stamp strong{position:relative;z-index:2;background:#e8e3d9;padding:.4rem;font:500 .72rem/1 "DM Mono",monospace;letter-spacing:.14em}
+  .principal-copy .smallcap{color:#6b747a;font:500 .65rem/1.4 "DM Mono",monospace;text-transform:uppercase;letter-spacing:.12em}
+  .principal-copy h3{margin-top:.9rem;font-size:clamp(2rem,3.7vw,3.5rem);line-height:1;letter-spacing:-.05em}
+  .principal-copy p{margin-top:1.3rem;color:#56616a;max-width:700px;line-height:1.78}
+  .principal-proof{
+    margin-top:2rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#c7c0b5;border:1px solid #c7c0b5;
+  }
+  .proof{background:#ede9e1;padding:1rem 1.1rem}
+  .proof strong{display:block;font-size:.86rem}
+  .proof span{display:block;margin-top:.28rem;color:#737c83;font-size:.72rem;line-height:1.5}
+
+  /* CTA + CONTACT */
+  .contact{background:#0a1219;color:#fff;padding:clamp(5.5rem,9vw,8rem) 0}
+  .contact-grid{
+    display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(3rem,8vw,7rem);align-items:start;
+  }
+  .contact .display{color:#fff}
+  .contact .display em{color:#b6c4f6}
+  .contact-copy{margin-top:1.5rem;color:#aab5bd;max-width:540px;line-height:1.75}
+  .contact-meta{margin-top:2.2rem;padding-top:1.4rem;border-top:1px solid rgba(255,255,255,.12);display:grid;gap:.65rem}
+  .contact-meta a{color:#fff;text-decoration:none}
+  .contact-meta span{color:#71808a;font:400 .66rem/1.5 "DM Mono",monospace;text-transform:uppercase;letter-spacing:.08em}
+
+  form{
+    border:1px solid rgba(255,255,255,.13);border-radius:var(--radius);
+    background:rgba(255,255,255,.035);padding:clamp(1.4rem,3vw,2rem);
+    display:grid;gap:1rem;box-shadow:0 30px 100px rgba(0,0,0,.16);
+  }
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  label{
+    display:block;margin-bottom:.45rem;color:#87949d;font:500 .63rem/1.4 "DM Mono",monospace;text-transform:uppercase;letter-spacing:.09em;
+  }
   input,select,textarea{
-    width:100%; color:var(--ink); background:var(--bg);
-    border:1px solid var(--line-strong); border-radius:5px; padding:.8rem .9rem;
-    outline:none; font:inherit;
+    width:100%;border:1px solid rgba(255,255,255,.15);background:#111e28;color:#eef2f5;
+    border-radius:10px;padding:.9rem 1rem;outline:none;transition:border-color .18s ease,box-shadow .18s ease;
   }
-  input:focus,select:focus,textarea:focus{border-color:var(--blue); box-shadow:0 0 0 3px var(--blue-soft);}
-  textarea{resize:vertical; min-height:110px;}
-  .form-note{color:var(--muted); font-size:.76rem; margin-top:.3rem;}
+  input:focus,select:focus,textarea:focus{border-color:#6d8fff;box-shadow:0 0 0 3px rgba(79,124,255,.15)}
+  textarea{min-height:150px;resize:vertical}
+  .submit-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-top:.25rem}
+  .submit{border:0;background:#fff;color:var(--ink)}
+  .submit::after{content:"↗"}
+  .form-note{color:#71808a;font-size:.7rem;max-width:260px;line-height:1.55}
 
-  footer{border-top:1px solid var(--line-strong); padding:1.8rem 0; color:var(--muted); font-size:.82rem;}
-  .footer-row{display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap; font-family:"JetBrains Mono",monospace; font-size:.78rem;}
+  /* FOOTER */
+  footer{background:#070d12;color:#7d8992;border-top:1px solid rgba(255,255,255,.08);padding:2rem 0}
+  .footer-grid{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center}
+  .footer-name{color:#dce2e6;font-weight:700;font-size:.86rem}
+  .footer-sub{margin-top:.25rem;font:400 .62rem/1.6 "DM Mono",monospace;letter-spacing:.08em;text-transform:uppercase}
+  .footer-right{text-align:right;font-size:.74rem;line-height:1.7}
+  .legal-note{margin-top:.45rem;color:#55636d;font-size:.66rem;max-width:650px}
 
-  @media (max-width:760px){
-    .nav-links a:not(.btn){display:none;}
-    .cap-grid{grid-template-columns:1fr;}
-    .contact-grid{grid-template-columns:1fr;}
-    .row{grid-template-columns:1fr;}
+  /* REVEAL */
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}
+  .reveal.visible{opacity:1;transform:none}
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .reveal{opacity:1;transform:none;transition:none}
+    .btn,.cap-row{transition:none}
+  }
+
+  @media (max-width:980px){
+    .hero-grid{grid-template-columns:1fr}
+    .hero-panel{border-left:0;border-top:1px solid rgba(255,255,255,.14);padding:1.6rem 0 0;max-width:650px}
+    .section-grid{grid-template-columns:1fr}
+    .section-label{position:static}
+    .case-grid{grid-template-columns:1fr}
+    .method-line{grid-template-columns:1fr 1fr}
+    .method-step{border-bottom:1px solid var(--line)}
+    .principal-card{grid-template-columns:1fr}
+    .contact-grid{grid-template-columns:1fr}
+  }
+
+  @media (max-width:720px){
+    .shell{width:min(calc(100% - 28px),var(--max))}
+    .nav{min-height:72px}
+    .brand-copy small{display:none}
+    .nav-links>a:not(.nav-cta){display:none}
+    .nav-cta{padding:.7rem .9rem;font-size:.75rem}
+    .hero{padding-top:125px;min-height:auto}
+    .hero h1{font-size:clamp(3.05rem,15vw,5rem)}
+    .hero-bottom{margin-top:4rem}
+    .problem-callout{grid-template-columns:1fr}
+    .problem-cell,.problem-cell+ .problem-cell{padding:1.3rem 0;border-right:0;border-bottom:1px solid var(--line)}
+    .problem-cell:last-child{border-bottom:0}
+    .cap-row{grid-template-columns:45px 1fr;gap:1rem}
+    .cap-row p{grid-column:2}
+    .method-line{grid-template-columns:1fr}
+    .method-step{border-right:0}
+    .principal-proof{grid-template-columns:1fr}
+    .form-row{grid-template-columns:1fr}
+    .footer-grid{grid-template-columns:1fr}
+    .footer-right{text-align:left}
   }
 </style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"ProfessionalService",
+  "name":"Rich Technical Solutions LLC",
+  "url":"https://richtechnicalsolutions.com/",
+  "email":"ericjrich@gmail.com",
+  "areaServed":"Pennsylvania",
+  "description":"Technical and operations consulting, troubleshooting, project coordination, and integrated technical solutions."
+}
+</script>
 </head>
+
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
-<header>
+<header class="site-header" id="siteHeader">
   <div class="shell nav">
-    <a class="brand" href="#top">
-      <span class="brand-mark">RTS</span>
-      Rich Technical Solutions
+    <a class="brand" href="#top" aria-label="Rich Technical Solutions home">
+      <span class="brand-mark"><span>RTS</span></span>
+      <span class="brand-copy">
+        <strong>Rich Technical Solutions</strong>
+        <small>Technical &amp; Operations Consulting</small>
+      </span>
     </a>
-    <nav class="nav-links">
+
+    <nav class="nav-links" aria-label="Primary navigation">
       <a href="#capabilities">Capabilities</a>
-      <a href="#process">Process</a>
-      <a class="btn btn-primary" href="#contact">Discuss a project</a>
+      <a href="#experience">Experience</a>
+      <a href="#method">Method</a>
+      <a href="#principal">Principal</a>
+      <a class="nav-cta" href="#contact">Discuss a project</a>
     </nav>
   </div>
 </header>
@@ -168,119 +432,347 @@
 <main id="main">
   <section class="hero" id="top">
     <div class="shell">
-      <div class="kicker">Technical &amp; operations consulting</div>
-      <h1>Technical clarity for <span>complex problems.</span></h1>
-      <p class="lede">RTS investigates difficult technical and operational problems, defines the right path forward, and coordinates the work through to completion.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#contact">Discuss a project</a>
-        <a class="btn btn-ghost" href="#process">See how we work</a>
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">Independent technical problem solving</div>
+          <h1>Complex problems rarely fit into <em>one box.</em></h1>
+          <p class="hero-lede">
+            Rich Technical Solutions investigates difficult technical and operational problems,
+            identifies the real constraint, and coordinates the capabilities required to move from uncertainty to resolution.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-light" href="#contact">Discuss a project</a>
+            <a class="btn btn-outline" href="#method">See the RTS method</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel" aria-label="RTS engagement model">
+          <div class="hero-panel-label">Engagement model</div>
+          <h2>Start with the problem, not the trade, vendor, or assumed solution.</h2>
+          <div class="hero-panel-list">
+            <div class="hero-panel-row"><span>01 / Investigate</span><span>WHAT IS ACTUALLY HAPPENING?</span></div>
+            <div class="hero-panel-row"><span>02 / Define</span><span>WHAT NEEDS TO CHANGE?</span></div>
+            <div class="hero-panel-row"><span>03 / Execute</span><span>WHO + WHAT GETS IT DONE?</span></div>
+            <div class="hero-panel-row"><span>04 / Verify</span><span>DID WE SOLVE THE ORIGINAL PROBLEM?</span></div>
+          </div>
+        </aside>
       </div>
-      <div class="thread">
-        <span>MANUFACTURERS</span>
-        <span>SMALL BUSINESSES</span>
-        <span>COMMERCIAL FACILITIES</span>
-        <span>PROPERTY OWNERS</span>
+
+      <div class="hero-bottom">
+        <div class="sectors">
+          <span>MANUFACTURING</span>
+          <span>COMMERCIAL</span>
+          <span>TECHNOLOGY</span>
+          <span>PROPERTY &amp; FACILITIES</span>
+        </div>
+        <div class="hero-note">Pennsylvania · Rich Technical Solutions LLC</div>
       </div>
     </div>
   </section>
 
-  <section id="capabilities">
-    <div class="shell">
-      <div class="kicker">Capabilities</div>
-      <h2 class="section-title">One point of contact for problems that cross more than one trade.</h2>
-      <p class="section-lede">From home projects to manufacturing issues, RTS applies lean-style thinking to identify root causes, and coordinates qualified specialists when a job needs licensing, permitting, or deeper expertise.</p>
-      <div class="cap-grid">
-        <article class="cap-card">
-          <div class="idx">01</div>
-          <h3>Technical investigation</h3>
-          <p>Root-cause thinking, on-site assessment, and practical recommendations.</p>
-        </article>
-        <article class="cap-card">
-          <div class="idx">02</div>
-          <h3>Equipment &amp; machinery</h3>
-          <p>Troubleshooting, controls support, and machine modifications for homes and manufacturers alike.</p>
-        </article>
-        <article class="cap-card">
-          <div class="idx">03</div>
-          <h3>Project coordination</h3>
-          <p>Scope the work, coordinate vendors and specialists, track it to completion.</p>
-        </article>
-        <article class="cap-card">
-          <div class="idx">04</div>
-          <h3>Technology &amp; operations</h3>
-          <p>Computer, network, and workflow troubleshooting for small organizations.</p>
-        </article>
+  <section class="light problem" id="problem">
+    <div class="shell section-grid">
+      <div class="section-label"><span>01</span> The problem</div>
+      <div class="reveal">
+        <h2 class="display">When systems overlap, fixing the symptom is <em>not enough.</em></h2>
+        <p class="lead">
+          Equipment, people, vendors, software, utilities, process, and physical infrastructure often fail at the seams between disciplines.
+          RTS looks across those boundaries, separates symptoms from causes, and turns a messy situation into a clear path forward.
+        </p>
+
+        <div class="problem-callout">
+          <article class="problem-cell">
+            <div class="num">A</div>
+            <h3>Ambiguous ownership</h3>
+            <p>When everyone owns one piece but nobody owns the outcome, RTS helps establish the whole picture.</p>
+          </article>
+          <article class="problem-cell">
+            <div class="num">B</div>
+            <h3>Recurring failures</h3>
+            <p>Repeated resets and replacements are not root-cause analysis. The goal is to understand why the problem keeps returning.</p>
+          </article>
+          <article class="problem-cell">
+            <div class="num">C</div>
+            <h3>Cross-discipline work</h3>
+            <p>When a solution needs multiple capabilities, RTS can define the scope and coordinate qualified specialists where required.</p>
+          </article>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="process" id="process">
-    <div class="shell">
-      <div class="kicker">How we work</div>
-      <h2 class="section-title">A disciplined path from confusion to completion.</h2>
-      <div class="steps">
-        <div class="step"><div class="n">01</div><h3>Investigate</h3><p>Collect facts, inspect the system, and talk with everyone involved to see the issue as a whole.</p></div>
-        <div class="step"><div class="n">02</div><h3>Define</h3><p>Separate symptoms from causes and turn it into an actionable scope.</p></div>
-        <div class="step"><div class="n">03</div><h3>Assemble</h3><p>Identify the right internal capability, vendor, or specialist.</p></div>
-        <div class="step"><div class="n">04</div><h3>Coordinate</h3><p>Manage communication, sequencing, and changes as the work moves.</p></div>
-        <div class="step"><div class="n">05</div><h3>Resolve</h3><p>Confirm the original problem was addressed, and document the outcome.</p></div>
+  <section class="light capabilities" id="capabilities">
+    <div class="shell section-grid">
+      <div class="section-label"><span>02</span> Capabilities</div>
+      <div class="reveal">
+        <h2 class="display">One point of contact. <em>Whole-system thinking.</em></h2>
+        <p class="lead">
+          RTS combines hands-on technical judgment with disciplined investigation, documentation, and project coordination.
+          The scope can be as focused as a stubborn equipment problem or as broad as a workflow that no longer makes sense.
+        </p>
+
+        <div class="cap-list">
+          <article class="cap-row">
+            <div class="cap-num">01</div>
+            <h3>Technical investigation</h3>
+            <p>Root-cause troubleshooting, on-site assessment, system mapping, documentation review, and practical recommendations built around evidence rather than assumptions.</p>
+          </article>
+          <article class="cap-row">
+            <div class="cap-num">02</div>
+            <h3>Equipment &amp; manufacturing systems</h3>
+            <p>Mechanical, electrical, hydraulic, pneumatic, controls, CNC, automation, and production-support problems where multiple systems interact.</p>
+          </article>
+          <article class="cap-row">
+            <div class="cap-num">03</div>
+            <h3>Project coordination</h3>
+            <p>Turn an unclear need into a workable scope, identify the right resources, coordinate vendors and specialists, track decisions, and follow the work through completion.</p>
+          </article>
+          <article class="cap-row">
+            <div class="cap-num">04</div>
+            <h3>Technology &amp; workflow</h3>
+            <p>Computer, Linux, lightweight automation, documentation, networking, and process improvements for organizations that need practical systems without unnecessary complexity.</p>
+          </article>
+          <article class="cap-row">
+            <div class="cap-num">05</div>
+            <h3>Custom technical solutions</h3>
+            <p>Machining, fabrication, prototyping, 3D printing, repair, and electromechanical problem solving, with qualified outside capabilities brought in when the scope demands it.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="experience" id="experience">
+    <div class="shell section-grid">
+      <div class="section-label"><span>03</span> Representative experience</div>
+      <div class="reveal">
+        <h2 class="display">Built from real work in <em>real systems.</em></h2>
+        <p class="lead">
+          The RTS approach is grounded in hands-on experience across manufacturing, maintenance, CNC production, technical support, custom projects, and digital tooling.
+        </p>
+        <p class="experience-note">
+          Representative experience below includes work completed through prior roles and independent projects. Company and client names are omitted where appropriate.
+        </p>
+
+        <div class="case-grid">
+          <article class="case">
+            <div>
+              <div class="case-tag">Manufacturing systems</div>
+              <h3>Multi-system equipment troubleshooting</h3>
+              <p>
+                Diagnosed and supported mechanical, electrical, hydraulic, pneumatic, and control-related faults in a large manufacturing environment,
+                using equipment behavior, technical documentation, inspection, testing, and verification to move beyond symptom chasing.
+              </p>
+            </div>
+            <div class="case-foot">FAULT ISOLATION · REPAIR · VERIFICATION · PREVENTIVE MAINTENANCE</div>
+          </article>
+
+          <article class="case">
+            <div>
+              <div class="case-tag">CNC &amp; production</div>
+              <h3>Process improvement through programming and setup</h3>
+              <p>
+                Developed custom CNC programs and macros and refined setups to improve repeatability, setup efficiency, tool life, and cycle performance while supporting machine maintenance and repair.
+              </p>
+            </div>
+            <div class="case-foot">PROGRAMMING · MACROS · SETUP · REPEATABILITY · PROCESS IMPROVEMENT</div>
+          </article>
+
+          <article class="case">
+            <div>
+              <div class="case-tag">Custom technical work</div>
+              <h3>From vague need to physical solution</h3>
+              <p>
+                Supported custom projects spanning machining, fabrication, repair, maintenance, 3D printing, mechanical and electrical work, and hydraulic or pneumatic systems,
+                translating practical needs into workable solutions.
+              </p>
+            </div>
+            <div class="case-foot">MACHINING · FABRICATION · PROTOTYPING · ELECTROMECHANICAL</div>
+          </article>
+
+          <article class="case">
+            <div>
+              <div class="case-tag">Digital systems</div>
+              <h3>Lightweight tools that make technical work repeatable</h3>
+              <p>
+                Built and used Linux, Bash, GitHub, HTML, documentation, and file-workflow tools to reduce repetitive effort,
+                preserve knowledge, and make technical processes easier to reproduce and maintain.
+              </p>
+            </div>
+            <div class="case-foot">LINUX · SCRIPTING · GITHUB · DOCUMENTATION · WORKFLOW</div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="light method" id="method">
+    <div class="shell section-grid">
+      <div class="section-label"><span>04</span> The RTS method</div>
+      <div class="reveal">
+        <h2 class="display">A disciplined path from confusion to <em>completion.</em></h2>
+        <p class="lead">
+          The process is designed to prevent premature solutions, unclear responsibility, and the expensive cycle of fixing the wrong thing twice.
+        </p>
+
+        <div class="method-line">
+          <article class="method-step">
+            <div class="n">01</div>
+            <h3>Investigate</h3>
+            <p>Collect facts, inspect the system, review documentation, and hear from the people closest to the problem.</p>
+          </article>
+          <article class="method-step">
+            <div class="n">02</div>
+            <h3>Define</h3>
+            <p>Separate symptoms from causes, identify constraints, and turn the problem into a clear scope.</p>
+          </article>
+          <article class="method-step">
+            <div class="n">03</div>
+            <h3>Assemble</h3>
+            <p>Determine what can be handled directly and where a specialist, vendor, or licensed trade is appropriate.</p>
+          </article>
+          <article class="method-step">
+            <div class="n">04</div>
+            <h3>Coordinate</h3>
+            <p>Manage sequencing, communication, decisions, documentation, and changes as the work moves.</p>
+          </article>
+          <article class="method-step">
+            <div class="n">05</div>
+            <h3>Verify</h3>
+            <p>Confirm the original problem was addressed, document the outcome, and identify anything still unresolved.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="light principal" id="principal">
+    <div class="shell section-grid">
+      <div class="section-label"><span>05</span> Principal</div>
+      <div class="reveal">
+        <h2 class="display">Broad technical range. <em>One accountable mind.</em></h2>
+
+        <div class="principal-card">
+          <div>
+            <div class="principal-stamp" aria-hidden="true"><strong>RTS</strong></div>
+          </div>
+          <div class="principal-copy">
+            <div class="smallcap">Eric J. Rich · Founder / Principal</div>
+            <h3>Problem solving before product selling.</h3>
+            <p>
+              Eric’s background spans industrial maintenance, CNC machining and programming, electrical and mechanical troubleshooting,
+              hydraulic and pneumatic systems, manufacturing support, computer systems, Linux tooling, and custom technical projects.
+              That range is the foundation of RTS: understand the system first, then choose the right solution and the right people to execute it.
+            </p>
+
+            <div class="principal-proof">
+              <div class="proof">
+                <strong>Industrial scale</strong>
+                <span>Experience supporting a 600+ machine manufacturing environment.</span>
+              </div>
+              <div class="proof">
+                <strong>Hands-on depth</strong>
+                <span>Machining, maintenance, controls-adjacent troubleshooting, fabrication, and repair.</span>
+              </div>
+              <div class="proof">
+                <strong>Digital fluency</strong>
+                <span>Linux, scripting, GitHub, documentation, and practical automation workflows.</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="contact" id="contact">
-    <div class="shell">
-      <div class="kicker">Start with the problem</div>
-      <h2 class="section-title">Tell us what's happening.</h2>
-      <div class="contact-grid">
-        <div class="contact-copy">
-          <p>You don't need to know the right trade or technical label before reaching out. Describe the situation, what you've tried, and the outcome you need.</p>
-          <a class="contact-email" href="mailto:ericjrich@gmail.com">ericjrich@gmail.com</a>
+    <div class="shell contact-grid">
+      <div class="reveal">
+        <div class="section-label"><span>06</span> Start with the problem</div>
+        <h2 class="display">Have something that does not fit neatly into <em>one category?</em></h2>
+        <p class="contact-copy">
+          You do not need to know the right trade, vendor, or technical label before reaching out.
+          Describe what is happening, what has already been tried, and what a successful outcome would look like.
+        </p>
+
+        <div class="contact-meta">
+          <span>Direct contact</span>
+          <a href="mailto:ericjrich@gmail.com">ericjrich@gmail.com</a>
         </div>
-        <form id="contactForm">
-          <div class="row">
-            <div>
-              <label for="name">Name</label>
-              <input id="name" name="name" autocomplete="name" required />
-            </div>
-            <div>
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" autocomplete="email" required />
-            </div>
-          </div>
-          <div>
-            <label for="type">Situation</label>
-            <select id="type" name="type">
-              <option>Technical consulting</option>
-              <option>Manufacturing / equipment</option>
-              <option>Project coordination</option>
-              <option>Technology support</option>
-              <option>Property / facility issue</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div>
-            <label for="message">What's happening?</label>
-            <textarea id="message" name="message" required placeholder="Describe the problem, what you've tried, and what a good outcome looks like."></textarea>
-          </div>
-          <div>
-            <button class="btn btn-primary" type="submit">Prepare email</button>
-            <p class="form-note">Opens your email app with the details filled in. Nothing is stored on this site.</p>
-          </div>
-        </form>
       </div>
+
+      <form id="contactForm" class="reveal">
+        <div class="form-row">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" autocomplete="name" required />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+          </div>
+        </div>
+
+        <div>
+          <label for="type">Situation</label>
+          <select id="type" name="type">
+            <option>Technical consulting</option>
+            <option>Manufacturing / equipment</option>
+            <option>Project coordination</option>
+            <option>Technology / workflow</option>
+            <option>Property / facility issue</option>
+            <option>Custom technical project</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="message">What is happening?</label>
+          <textarea id="message" name="message" required placeholder="Describe the problem, what has been tried, and what a good outcome looks like."></textarea>
+        </div>
+
+        <div class="submit-row">
+          <button class="btn submit" type="submit">Prepare email</button>
+          <p class="form-note">Opens your email application with the project details filled in. Nothing is stored on this site.</p>
+        </div>
+      </form>
     </div>
   </section>
 </main>
 
 <footer>
-  <div class="shell footer-row">
-    <div>RICH TECHNICAL SOLUTIONS LLC · PA</div>
-    <div>CONSULTING · TROUBLESHOOTING · COORDINATION</div>
+  <div class="shell footer-grid">
+    <div>
+      <div class="footer-name">Rich Technical Solutions LLC</div>
+      <div class="footer-sub">Technical consulting · troubleshooting · project coordination</div>
+      <div class="legal-note">Specialized or licensed work is coordinated with appropriately qualified professionals when required by scope or jurisdiction.</div>
+    </div>
+    <div class="footer-right">
+      Pennsylvania<br />
+      <span id="year"></span> © Rich Technical Solutions LLC
+    </div>
   </div>
 </footer>
 
 <script>
+  const header = document.getElementById('siteHeader');
+  const updateHeader = () => header.classList.toggle('scrolled', window.scrollY > 18);
+  updateHeader();
+  window.addEventListener('scroll', updateHeader, {passive:true});
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.12});
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
   document.getElementById('contactForm').addEventListener('submit', function(e){
     e.preventDefault();
     const name = document.getElementById('name').value.trim();
@@ -288,8 +780,16 @@
     const type = document.getElementById('type').value;
     const message = document.getElementById('message').value.trim();
     const subject = `RTS Project Inquiry - ${type}`;
-    const body = [`Name: ${name}`, `Email: ${email}`, `Situation: ${type}`, '', message].join('\n');
-    window.location.href = `mailto:ericjrich@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const body = [
+      `Name: ${name}`,
+      `Email: ${email}`,
+      `Situation: ${type}`,
+      '',
+      message
+    ].join('\n');
+
+    window.location.href =
+      `mailto:ericjrich@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
 </script>
 </body>
