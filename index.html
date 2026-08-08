@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="Rich Technical Solutions provides technical and operations consulting, troubleshooting, systems thinking, and project coordination for manufacturers, businesses, facilities, and complex technical problems." />
+<meta name="description" content="Rich Technical Solutions provides technical and operations consulting, troubleshooting, project coordination, startup systems, and integrated technical solutions for manufacturers, businesses, facilities, and complex problems." />
 <meta name="theme-color" content="#0d1720" />
 <meta name="robots" content="index,follow" />
 <link rel="canonical" href="https://richtechnicalsolutions.com/" />
@@ -272,6 +272,107 @@
   .case p{margin-top:.8rem;color:#a8b3bb;font-size:.9rem;line-height:1.72;max-width:500px}
   .case-foot{padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.11);color:#7d8a94;font:400 .67rem/1.6 "DM Mono",monospace}
 
+
+  /* STARTUP */
+  .startup{
+    background:#e9e4da;
+    border-bottom:1px solid var(--line);
+    position:relative;
+    overflow:hidden;
+  }
+  .startup::after{
+    content:"";
+    position:absolute;
+    width:520px;height:520px;
+    right:-260px;top:50%;
+    transform:translateY(-50%);
+    border:1px solid rgba(13,23,32,.08);
+    border-radius:50%;
+    box-shadow:
+      0 0 0 70px rgba(13,23,32,.025),
+      0 0 0 140px rgba(13,23,32,.018);
+    pointer-events:none;
+  }
+  .startup-wrap{
+    position:relative;
+    z-index:1;
+  }
+  .startup-intro{
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    gap:clamp(2rem,6vw,5rem);
+    align-items:end;
+  }
+  .startup-intro .lead{margin-top:0}
+  .startup-statement{
+    margin-top:3.4rem;
+    background:var(--ink);
+    color:#fff;
+    border-radius:var(--radius);
+    padding:clamp(2rem,4vw,3.2rem);
+    box-shadow:var(--shadow);
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:clamp(2rem,5vw,4rem);
+  }
+  .startup-statement h3{
+    font-size:clamp(1.8rem,3.4vw,3.2rem);
+    line-height:1.02;
+    letter-spacing:-.045em;
+  }
+  .startup-statement h3 em{
+    font-family:"Newsreader",Georgia,serif;
+    font-weight:500;
+    color:#b6c4f6;
+  }
+  .startup-statement p{
+    color:#aeb9c1;
+    line-height:1.75;
+    font-size:.95rem;
+  }
+  .startup-services{
+    margin-top:1.8rem;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:1px;
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.12);
+  }
+  .startup-service{
+    background:#14212c;
+    padding:1rem 1.1rem;
+    color:#dbe2e7;
+    font-size:.82rem;
+    line-height:1.55;
+  }
+  .startup-service span{
+    display:block;
+    margin-bottom:.25rem;
+    color:#71808a;
+    font:500 .6rem/1.4 "DM Mono",monospace;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+  }
+  .startup-foot{
+    margin-top:1.5rem;
+    padding-top:1.2rem;
+    border-top:1px solid rgba(255,255,255,.12);
+    color:#7c8993;
+    font-size:.73rem;
+    line-height:1.7;
+  }
+  .startup-cta{
+    margin-top:1.8rem;
+    display:inline-flex;
+    align-items:center;
+    gap:.7rem;
+    text-decoration:none;
+    font-weight:800;
+    font-size:.85rem;
+    color:#fff;
+  }
+  .startup-cta::after{content:"↗"}
+
   /* METHOD */
   .method{background:var(--white);border-bottom:1px solid var(--line)}
   .method-line{margin-top:4rem;display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -365,6 +466,8 @@
     .section-label{position:static}
     .case-grid{grid-template-columns:1fr}
     .method-line{grid-template-columns:1fr 1fr}
+    .startup-intro{grid-template-columns:1fr}
+    .startup-statement{grid-template-columns:1fr}
     .method-step{border-bottom:1px solid var(--line)}
     .principal-card{grid-template-columns:1fr}
     .contact-grid{grid-template-columns:1fr}
@@ -385,6 +488,7 @@
     .cap-row{grid-template-columns:45px 1fr;gap:1rem}
     .cap-row p{grid-column:2}
     .method-line{grid-template-columns:1fr}
+    .startup-services{grid-template-columns:1fr}
     .method-step{border-right:0}
     .principal-proof{grid-template-columns:1fr}
     .form-row{grid-template-columns:1fr}
@@ -537,6 +641,11 @@
             <h3>Custom technical solutions</h3>
             <p>Machining, fabrication, prototyping, 3D printing, repair, and electromechanical problem solving, with qualified outside capabilities brought in when the scope demands it.</p>
           </article>
+          <article class="cap-row">
+            <div class="cap-num">06</div>
+            <h3>Business launch &amp; startup systems</h3>
+            <p>Practical support for turning a business idea into an operating business, including startup workflow, banking readiness, domains, websites, email, documentation, technology, and basic business systems.</p>
+          </article>
         </div>
       </div>
     </div>
@@ -606,9 +715,54 @@
     </div>
   </section>
 
+  <section class="light startup" id="startup">
+    <div class="shell section-grid startup-wrap">
+      <div class="section-label"><span>04</span> Startup systems</div>
+      <div class="reveal">
+        <div class="startup-intro">
+          <div>
+            <h2 class="display">Starting something? Build the infrastructure <em>right from the beginning.</em></h2>
+          </div>
+          <p class="lead">
+            Starting a business involves more than filing paperwork. RTS helps new and small business owners organize the technical and administrative pieces needed to become operational.
+          </p>
+        </div>
+
+        <div class="startup-statement">
+          <div>
+            <h3>Bring the idea. <em>We help build the system around it.</em></h3>
+            <a class="startup-cta" href="#contact">Discuss a startup project</a>
+          </div>
+
+          <div>
+            <p>
+              From domains, websites, email, and documentation to banking preparation, software, workflows, and vendor coordination,
+              RTS helps put the pieces in the right order and get them working together.
+            </p>
+
+            <div class="startup-services">
+              <div class="startup-service"><span>01</span>Startup workflow &amp; document organization</div>
+              <div class="startup-service"><span>02</span>Banking readiness &amp; operational setup</div>
+              <div class="startup-service"><span>03</span>Domains, DNS, websites &amp; business email</div>
+              <div class="startup-service"><span>04</span>Software, files, backups &amp; workflow systems</div>
+              <div class="startup-service"><span>05</span>Customer intake, estimates, invoices &amp; basic forms</div>
+              <div class="startup-service"><span>06</span>Vendor and professional-resource coordination</div>
+            </div>
+
+            <div class="startup-foot">
+              RTS provides technical implementation, administrative support, and project coordination.
+              When legal, tax, insurance, licensing, or other specialized professional advice is required,
+              RTS helps identify the need and coordinate with the appropriate professional.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="light method" id="method">
     <div class="shell section-grid">
-      <div class="section-label"><span>04</span> The RTS method</div>
+      <div class="section-label"><span>05</span> The RTS method</div>
       <div class="reveal">
         <h2 class="display">A disciplined path from confusion to <em>completion.</em></h2>
         <p class="lead">
@@ -648,7 +802,7 @@
 
   <section class="light principal" id="principal">
     <div class="shell section-grid">
-      <div class="section-label"><span>05</span> Principal</div>
+      <div class="section-label"><span>06</span> Principal</div>
       <div class="reveal">
         <h2 class="display">Broad technical range. <em>One accountable mind.</em></h2>
 
@@ -688,7 +842,7 @@
   <section class="contact" id="contact">
     <div class="shell contact-grid">
       <div class="reveal">
-        <div class="section-label"><span>06</span> Start with the problem</div>
+        <div class="section-label"><span>07</span> Start with the problem</div>
         <h2 class="display">Have something that does not fit neatly into <em>one category?</em></h2>
         <p class="contact-copy">
           You do not need to know the right trade, vendor, or technical label before reaching out.
@@ -722,6 +876,7 @@
             <option>Technology / workflow</option>
             <option>Property / facility issue</option>
             <option>Custom technical project</option>
+            <option>Business launch / startup systems</option>
             <option>Other</option>
           </select>
         </div>
